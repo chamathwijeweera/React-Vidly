@@ -7,6 +7,7 @@ const movies = [
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock: 6,
     dailyRentalRate: 2.5,
+    likeStatus: true,
     publishDate: "2018-01-03T19:04:28.809Z"
   },
   {
@@ -14,6 +15,7 @@ const movies = [
     title: "Die Hard",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock: 5,
+    likeStatus: true,
     dailyRentalRate: 2.5
   },
   {
@@ -21,6 +23,7 @@ const movies = [
     title: "Get Out",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
     numberInStock: 8,
+    likeStatus: false,
     dailyRentalRate: 3.5
   },
   {
@@ -28,6 +31,7 @@ const movies = [
     title: "Trip to Italy",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
     numberInStock: 7,
+    likeStatus: true,
     dailyRentalRate: 3.5
   },
   {
@@ -35,6 +39,7 @@ const movies = [
     title: "Airplane",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
     numberInStock: 7,
+    likeStatus: false,
     dailyRentalRate: 3.5
   },
   {
@@ -42,6 +47,7 @@ const movies = [
     title: "Wedding Crashers",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
     numberInStock: 7,
+    likeStatus: false,
     dailyRentalRate: 3.5
   },
   {
@@ -49,6 +55,7 @@ const movies = [
     title: "Gone Girl",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
     numberInStock: 7,
+    likeStatus: true,
     dailyRentalRate: 4.5
   },
   {
@@ -56,6 +63,7 @@ const movies = [
     title: "The Sixth Sense",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
     numberInStock: 4,
+    likeStatus: false,
     dailyRentalRate: 3.5
   },
   {
@@ -63,6 +71,15 @@ const movies = [
     title: "The Avengers",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock: 7,
+    likeStatus: true,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7q6fbcfd471821",
+    title: "X-Men",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    numberInStock: 7,
+    likeStatus: true,
     dailyRentalRate: 3.5
   }
 ];
@@ -73,6 +90,10 @@ export function getMovies() {
 
 export function getMovie(id) {
   return movies.find(m => m._id === id);
+}
+
+export function getMovieByGenre(genreId) {
+  return movies.filter(m => m.genre._id === genreId);
 }
 
 export function saveMovie(movie) {
