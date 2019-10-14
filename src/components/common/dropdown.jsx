@@ -12,6 +12,7 @@ class DropDown extends Component {
         <select
           className="custom-select custom-select-sm form-control form-control-sm"
           style={{ width: "auto" }}
+          value={this.props.pageSize}
           onChange={event =>
             this.props.onPageCountChange(parseInt(event.target.value))
           }

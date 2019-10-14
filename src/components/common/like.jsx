@@ -16,7 +16,6 @@ class Like extends Component {
 }
 
 Like.propTypes = {
-  likeStatus: PropTypes.bool.isRequired,
   onLikeToggle: PropTypes.func.isRequired
 };
 
